@@ -1,8 +1,7 @@
 html {background-color: rgb(226, 223, 223)}
 
 * {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 100px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 div.column.flex-container {
@@ -29,4 +28,5 @@ div.btn {
     background-color: rgb(226, 223, 223);
     margin: 5px;
     width: 100px;
-    height: 100px;}
+    height: 100px;
+    font-size: 100px;}
