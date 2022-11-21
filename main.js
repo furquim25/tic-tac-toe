@@ -9,8 +9,7 @@ function selectPosition(clickedId) {
 }
 
 function checkWin() {
-    currentBoard = getArray()
-
+    currentBoard = getBoardArray()
     //Check horizontal win conditions
     currentBoard.forEach((item, index) => {
         if(item[0]==item[1] && item[0]==item[2] && item[0] == "X"){
@@ -19,7 +18,6 @@ function checkWin() {
             document.getElementsByClassName("main-text")[0].innerHTML = "You lost!"
         }
     })
-
     //Check vertical win conditions
     transpose(currentBoard).forEach((item, index) => {
         if(item[0]==item[1] && item[0]==item[2] && item[0] == "X"){
@@ -31,11 +29,11 @@ function checkWin() {
     
 }
 
-function getArray() {
+function getBoardArray() {
     arrayBoard = [
-        [document.getElementById(1).textContent.trim(),document.getElementById(2).textContent.trim(), document.getElementById(3).textContent.trim()],
-        [document.getElementById(4).textContent.trim(),document.getElementById(5).textContent.trim(), document.getElementById(6).textContent.trim()],
-        [document.getElementById(7).textContent.trim(),document.getElementById(8).textContent.trim(), document.getElementById(9).textContent.trim()]
+        [document.getElementById("pos1").textContent.trim(),document.getElementById("pos2").textContent.trim(), document.getElementById("pos3").textContent.trim()],
+        [document.getElementById("pos4").textContent.trim(),document.getElementById("pos5").textContent.trim(), document.getElementById("pos6").textContent.trim()],
+        [document.getElementById("pos7").textContent.trim(),document.getElementById("pos8").textContent.trim(), document.getElementById("pos9").textContent.trim()]
     ]
     return arrayBoard
 }
