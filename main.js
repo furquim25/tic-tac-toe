@@ -18,8 +18,8 @@ function selectPosition(clickedId) {
 }
 
 function checkGameIsOver() {
-    winXText = "X won!"
-    winOText = "O won!"
+    winXText = "<b>X</b> won!"
+    winOText = "<b>O</b> won!"
     tieText = "It's a tie!"
     isGameOver = false
     currentBoard = getBoardArray()
