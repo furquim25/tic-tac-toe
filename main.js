@@ -27,7 +27,7 @@ function checkGameIsOver() {
     //Check horizontal win conditions
     
     currentBoard.forEach((item, index) => {
-        if(item[0]==item[1] && item[0]==item[2] && item[0] == "X"){
+        if(item[0]==item[1] && item[0]==item[2]){
             if (item[0] == "X"){
                 document.getElementsByClassName("main-text")[0].innerHTML = winXText
                 disablePlay()
