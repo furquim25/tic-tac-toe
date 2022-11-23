@@ -25,16 +25,17 @@ function checkGameIsOver() {
     currentBoard = getBoardArray()
 
     //Check horizontal win conditions
-    
     currentBoard.forEach((item, index) => {
         if(item[0]==item[1] && item[0]==item[2]){
             if (item[0] == "X"){
                 document.getElementsByClassName("main-text")[0].innerHTML = winXText
                 disablePlay()
+                drawLine(index + 1,'horizontal')
                 isGameOver = true
             } else if (item[0] == "O"){
                 document.getElementsByClassName("main-text")[0].innerHTML = winOText
                 disablePlay()
+                drawLine(index + 1,'horizontal')
                 isGameOver = true
             }
         }
@@ -47,10 +48,12 @@ function checkGameIsOver() {
             if (item[0] == "X"){
                 document.getElementsByClassName("main-text")[0].innerHTML = winXText
                 disablePlay()
+                drawLine(index + 1,'vertical')
                 isGameOver = true
             } else if (item[0] == "O"){
                 document.getElementsByClassName("main-text")[0].innerHTML = winOText
                 disablePlay()
+                drawLine(index + 1,'vertical')
                 isGameOver = true
             }
             
@@ -64,10 +67,12 @@ function checkGameIsOver() {
         if (currentBoard[0][0] == "X"){
             document.getElementsByClassName("main-text")[0].innerHTML = winXText
             disablePlay()
+            drawLine(1,'diagonal')
             isGameOver = true
         } else if (currentBoard[0][0] == "O"){
             document.getElementsByClassName("main-text")[0].innerHTML = winOText
             disablePlay()
+            drawLine(1,'diagonal')
             isGameOver = true
         }
     }
@@ -77,10 +82,12 @@ function checkGameIsOver() {
         if (currentBoard[0][2] == "X"){
             document.getElementsByClassName("main-text")[0].innerHTML = winXText
             disablePlay()
+            drawLine(2,'diagonal')
             isGameOver = true
         } else if (currentBoard[0][2] == "O"){
             document.getElementsByClassName("main-text")[0].innerHTML = winOText
             disablePlay()
+            drawLine(2,'diagonal')
             isGameOver = true
         }
     }
@@ -121,4 +128,69 @@ function disablePlay(){
         console.log('pos'+i)
         document.getElementById('pos'+i).onclick = null
     }
+}
+function drawLine(location,direction){
+    line = document.querySelector(".line")
+    if (direction == 'horizontal'){
+        switch(location){
+            case 1:
+                line.style.width = '100%'
+                line.style.top = '15%'
+                line.style.left = '0%'
+                line.style.rotate ='0deg'
+            break
+            case 2:
+                line.style.width = '100%'
+                line.style.top = '48%'
+                line.style.left = '0%'
+                line.style.rotate ='0deg'
+            break
+            case 3:
+                line.style.width = '100%'
+                line.style.top = '82%'
+                line.style.left = '0%'
+                line.style.rotate ='0deg'
+            break
+        }
+    }
+    if (direction == 'vertical'){
+        switch(location){
+            case 1:
+                line.style.width = '100%'
+                line.style.top = '0%'
+                line.style.left = '17%'
+                line.style.rotate ='90deg'
+            break
+            case 2:
+                line.style.width = '100%'
+                line.style.top = '0%'
+                line.style.left = '51%'
+                line.style.rotate ='90deg'
+            break
+            case 3:
+                line.style.width = '100%'
+                line.style.top = '0%'
+                line.style.left = '84.5%'
+                line.style.rotate ='90deg'
+            break
+        }
+    }
+    if (direction == 'diagonal'){
+        switch(location){
+            case 1:
+                line.style.width = '140%'
+                line.style.top = '-1%'
+                line.style.left = '0%'
+                line.style.rotate ='44.5deg'
+            break
+            case 2:
+                line.style.width = '140%'
+                line.style.top = '100%'
+                line.style.left = '0%'
+                line.style.rotate ='-45deg'
+            break
+        }
+    }
+    line.style.display = 'block'
+    console.log(line)
 }

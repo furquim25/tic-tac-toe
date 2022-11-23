@@ -49,13 +49,16 @@ div.btn {
 div.board {
   position:relative;
 }
-/* div.line {
+div.line {
+  display: none;
   position:absolute;
   z-index: 999999;
-  width: 100%;
+  width: 140%;
   height: 5px; 
-  top: 50%;
+  top: -1%;
   left:0;
   border-radius: 3px;
   background-color: rgb(255, 0, 0);
-} */
+  transform-origin: top left;
+  rotate: 45deg;
+}
