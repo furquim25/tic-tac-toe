@@ -18,23 +18,28 @@ function selectPosition(clickedId) {
 }
 
 function checkGameIsOver() {
-    winXText = "X won!"
-    winOText = "O won!"
+    winXText = "<b>X</b> won!"
+    winOText = "<b>O</b> won!"
     tieText = "It's a tie!"
+    isGameOver = false
     currentBoard = getBoardArray()
 
     //Check horizontal win conditions
+    
     currentBoard.forEach((item, index) => {
-        if(item[0]==item[1] && item[0]==item[2] && item[0] == "X"){
+        if(item[0]==item[1] && item[0]==item[2]){
             if (item[0] == "X"){
                 document.getElementsByClassName("main-text")[0].innerHTML = winXText
                 disablePlay()
+                isGameOver = true
             } else if (item[0] == "O"){
                 document.getElementsByClassName("main-text")[0].innerHTML = winOText
                 disablePlay()
+                isGameOver = true
             }
         }
     })
+    if(isGameOver){return}
 
     //Check vertical win conditions
     transpose(currentBoard).forEach((item, index) => {
@@ -42,13 +47,16 @@ function checkGameIsOver() {
             if (item[0] == "X"){
                 document.getElementsByClassName("main-text")[0].innerHTML = winXText
                 disablePlay()
+                isGameOver = true
             } else if (item[0] == "O"){
                 document.getElementsByClassName("main-text")[0].innerHTML = winOText
                 disablePlay()
+                isGameOver = true
             }
             
         }
     })
+    if(isGameOver){return}
 
     //Check diagonals conditions
     console.log(currentBoard[0][0])
@@ -56,21 +64,27 @@ function checkGameIsOver() {
         if (currentBoard[0][0] == "X"){
             document.getElementsByClassName("main-text")[0].innerHTML = winXText
             disablePlay()
+            isGameOver = true
         } else if (currentBoard[0][0] == "O"){
             document.getElementsByClassName("main-text")[0].innerHTML = winOText
             disablePlay()
+            isGameOver = true
         }
-        
     }
+    if(isGameOver){return}
+
     if(currentBoard[0][2]==currentBoard[1][1] && currentBoard[0][2]==currentBoard[2][0]){
         if (currentBoard[0][2] == "X"){
             document.getElementsByClassName("main-text")[0].innerHTML = winXText
             disablePlay()
+            isGameOver = true
         } else if (currentBoard[0][2] == "O"){
             document.getElementsByClassName("main-text")[0].innerHTML = winOText
             disablePlay()
+            isGameOver = true
         }
     }
+    if(isGameOver){return}
 
     //Check tie condition
     totalFilledSpaces = 0
@@ -80,7 +94,10 @@ function checkGameIsOver() {
     if (totalFilledSpaces == 9){
         document.getElementsByClassName("main-text")[0].innerHTML = tieText
         disablePlay()
+        isGameOver = true
     }
+
+    return isGameOver
           
 }
 
