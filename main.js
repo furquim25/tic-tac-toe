@@ -122,3 +122,51 @@ function disablePlay(){
         document.getElementById('pos'+i).onclick = null
     }
 }
+function drawLine(location,direction){
+    line = document.querySelector(".line")
+    if (direction == 'horizontal'){
+        switch(location){
+            case 1:
+
+            break
+            case 2:
+
+            break
+            case 3:
+
+            break
+        }
+    }
+    if (direction == 'vertical'){
+        switch(location){
+            case 1:
+
+            break
+            case 2:
+
+            break
+            case 3:
+
+            break
+        }
+    }
+    if (direction == 'diagonal'){
+        switch(location){
+            case 1:
+                line.style.width = '140%'
+                line.style.top = '-1%'
+                line.style.left = '0%'
+                line.style.rotate ='44.5deg'
+            break
+            case 2:
+                line.style.width = '140%'
+                line.style.top = '100%'
+                line.style.left = '0%'
+                line.style.rotate ='-45deg'
+            break
+        }
+    }
+    line.style.display = 'block'
+    console.log(line)
+}
+//drawLine(1,'diagonal')
