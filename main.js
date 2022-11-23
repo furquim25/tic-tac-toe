@@ -127,26 +127,44 @@ function drawLine(location,direction){
     if (direction == 'horizontal'){
         switch(location){
             case 1:
-
+                line.style.width = '100%'
+                line.style.top = '15%'
+                line.style.left = '0%'
+                line.style.rotate ='0deg'
             break
             case 2:
-
+                line.style.width = '100%'
+                line.style.top = '48%'
+                line.style.left = '0%'
+                line.style.rotate ='0deg'
             break
             case 3:
-
+                line.style.width = '100%'
+                line.style.top = '82%'
+                line.style.left = '0%'
+                line.style.rotate ='0deg'
             break
         }
     }
     if (direction == 'vertical'){
         switch(location){
             case 1:
-
+                line.style.width = '100%'
+                line.style.top = '0%'
+                line.style.left = '17%'
+                line.style.rotate ='90deg'
             break
             case 2:
-
+                line.style.width = '100%'
+                line.style.top = '0%'
+                line.style.left = '51%'
+                line.style.rotate ='90deg'
             break
             case 3:
-
+                line.style.width = '100%'
+                line.style.top = '0%'
+                line.style.left = '84.5%'
+                line.style.rotate ='90deg'
             break
         }
     }
@@ -169,4 +187,3 @@ function drawLine(location,direction){
     line.style.display = 'block'
     console.log(line)
 }
-//drawLine(1,'diagonal')
