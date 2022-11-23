@@ -4,6 +4,7 @@ html {background-color: rgb(226, 223, 223)}
   font-family: Arial, Helvetica, sans-serif;
 }
 
+
 div.column.flex-container {
     background-color: rgba(158, 177, 75, 0);
     display: flex;
@@ -15,7 +16,7 @@ div.column.flex-container {
     
   }
 
-div.flex-container {
+div.flex-container.row {
     background-color: rgba(24, 50, 168, 0.473);
     display: flex;
 
@@ -44,3 +45,17 @@ div.btn {
   margin-left: 5px;
   margin-right: 5px;
 }
+
+div.board {
+  position:relative;
+}
+/* div.line {
+  position:absolute;
+  z-index: 999999;
+  width: 100%;
+  height: 5px; 
+  top: 50%;
+  left:0;
+  border-radius: 3px;
+  background-color: rgb(255, 0, 0);
+} */
