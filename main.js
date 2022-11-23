@@ -25,16 +25,17 @@ function checkGameIsOver() {
     currentBoard = getBoardArray()
 
     //Check horizontal win conditions
-    
     currentBoard.forEach((item, index) => {
         if(item[0]==item[1] && item[0]==item[2]){
             if (item[0] == "X"){
                 document.getElementsByClassName("main-text")[0].innerHTML = winXText
                 disablePlay()
+                drawLine(index + 1,'horizontal')
                 isGameOver = true
             } else if (item[0] == "O"){
                 document.getElementsByClassName("main-text")[0].innerHTML = winOText
                 disablePlay()
+                drawLine(index + 1,'horizontal')
                 isGameOver = true
             }
         }
@@ -47,10 +48,12 @@ function checkGameIsOver() {
             if (item[0] == "X"){
                 document.getElementsByClassName("main-text")[0].innerHTML = winXText
                 disablePlay()
+                drawLine(index + 1,'vertical')
                 isGameOver = true
             } else if (item[0] == "O"){
                 document.getElementsByClassName("main-text")[0].innerHTML = winOText
                 disablePlay()
+                drawLine(index + 1,'vertical')
                 isGameOver = true
             }
             
@@ -64,10 +67,12 @@ function checkGameIsOver() {
         if (currentBoard[0][0] == "X"){
             document.getElementsByClassName("main-text")[0].innerHTML = winXText
             disablePlay()
+            drawLine(1,'diagonal')
             isGameOver = true
         } else if (currentBoard[0][0] == "O"){
             document.getElementsByClassName("main-text")[0].innerHTML = winOText
             disablePlay()
+            drawLine(1,'diagonal')
             isGameOver = true
         }
     }
@@ -77,10 +82,12 @@ function checkGameIsOver() {
         if (currentBoard[0][2] == "X"){
             document.getElementsByClassName("main-text")[0].innerHTML = winXText
             disablePlay()
+            drawLine(2,'diagonal')
             isGameOver = true
         } else if (currentBoard[0][2] == "O"){
             document.getElementsByClassName("main-text")[0].innerHTML = winOText
             disablePlay()
+            drawLine(2,'diagonal')
             isGameOver = true
         }
     }
